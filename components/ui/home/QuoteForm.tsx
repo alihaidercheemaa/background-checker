@@ -36,10 +36,6 @@ const QuoteForm = () => {
             last_name: "",
             contact_number: "",
             email: "",
-            loading_place: "",
-            unloading_place: "",
-            payload: "",
-            dimensions: "",
             type_of_cargo: undefined,
             type_of_transportation: undefined,
             message: "",
@@ -76,10 +72,10 @@ const QuoteForm = () => {
                     <div className='xl:w-[60%] lg:w-[55%] w-full lg:pb-20'>
                         <div className='mb-8'>
                             <div className='text-start mb-2'>
-                                <h1 className={`text-[#1A1A1A] text-[43px] leading-[53px] font-bold font-[family-name:var(--font-Outfit)]`}>Get a Quote</h1>
+                                <h1 className={`text-midNight text-[43px] leading-[53px] font-bold`}>Request a Quote</h1>
                             </div>
                             <div className='max-w-[780px] mr-auto text-start'>
-                                <p className='text-[#525252] text-base font-normal'>Please enter information below in order to calculate the shipment.</p>
+                                <p className='text-[#525252] text-base font-normal'>Please fill out the form below with your details.</p>
                             </div>
                         </div>
                         <Form {...form}>
@@ -139,57 +135,6 @@ const QuoteForm = () => {
 
                                     <FormField
                                         control={form.control}
-                                        name="loading_place"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormControl>
-                                                    <Input autoComplete="off" placeholder="Loading Place" {...field} />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-
-                                    <FormField
-                                        control={form.control}
-                                        name="unloading_place"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormControl>
-                                                    <Input autoComplete="off" placeholder="Unloading Place" {...field} />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-
-                                    <FormField
-                                        control={form.control}
-                                        name="payload"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormControl>
-                                                    <Input autoComplete="off" placeholder="Payload" {...field} />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-
-                                    <FormField
-                                        control={form.control}
-                                        name="dimensions"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormControl>
-                                                    <Input autoComplete="off" placeholder="Dimensions" {...field} />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <FormField
-                                        control={form.control}
                                         name="type_of_cargo"
                                         render={({ field }) => (
                                             <FormItem>
@@ -199,14 +144,14 @@ const QuoteForm = () => {
                                                         value={field.value || undefined}
                                                     >
                                                         <SelectTrigger>
-                                                            <SelectValue placeholder="Select Type of Cargo" />
+                                                            <SelectValue placeholder="Select Service" />
                                                         </SelectTrigger>
                                                         <SelectContent>
-                                                            <SelectItem value="Container Cargo">Container Cargo</SelectItem>
-                                                            <SelectItem value="Liquid Bulk">Liquid Bulk</SelectItem>
-                                                            <SelectItem value="Dry Bulk">Dry Bulk</SelectItem>
-                                                            <SelectItem value="Break Bulk">Break Bulk</SelectItem>
-                                                            <SelectItem value="Others">Others</SelectItem>
+                                                            <SelectItem value="Container Cargo">ABC</SelectItem>
+                                                            <SelectItem value="Liquid Bulk">ABC</SelectItem>
+                                                            <SelectItem value="Dry Bulk">ABC</SelectItem>
+                                                            <SelectItem value="Break Bulk">ABC</SelectItem>
+                                                            <SelectItem value="Others">ABC</SelectItem>
                                                         </SelectContent>
                                                     </Select>
                                                 </FormControl>
@@ -227,12 +172,12 @@ const QuoteForm = () => {
                                                         value={field.value || undefined}
                                                     >
                                                         <SelectTrigger>
-                                                            <SelectValue placeholder="Select Type of Transportation" />
+                                                            <SelectValue placeholder="Select Industry" />
                                                         </SelectTrigger>
                                                         <SelectContent>
-                                                            <SelectItem value="Air Freight">Air Freight</SelectItem>
-                                                            <SelectItem value="Sea Freight">Sea Freight</SelectItem>
-                                                            <SelectItem value="Road Freight">Road Freight</SelectItem>
+                                                            <SelectItem value="Air Freight">ABC</SelectItem>
+                                                            <SelectItem value="Sea Freight">ABC</SelectItem>
+                                                            <SelectItem value="Road Freight">ABC</SelectItem>
                                                         </SelectContent>
                                                     </Select>
                                                 </FormControl>
@@ -255,7 +200,7 @@ const QuoteForm = () => {
                                         />
                                     </div>
                                 </div>
-                                <Button type="submit" variant="heroBtn" size="lg" className="hover:bg-[#1A1A1A] bg-[#1A1A1A] text-[#fff]" disabled={loading}>
+                                <Button type="submit" variant='primary' size="lg" disabled={loading}>
                                     {loading ? "Please wait..." : " Send Message"}
                                 </Button>
                             </form>

@@ -8,10 +8,10 @@ const OfficeAddress = () => {
                 <div className='container'>
                     <div className='flex flex-col'>
                         <div className='mb-7'>
-                            <h1 className={`text-[#1A1A1A] text-[48px] leading-[56px] font-bold font-[family-name:var(--font-Outfit)]`}>Main Office</h1>
+                            <h1 className={`text-midNight text-[48px] leading-[56px] font-bold `}>Main Office</h1>
                         </div>
                         <div>
-                            <h6 className='text-[#1A1A1A] text-2xl font-semibold mb-5'>U.S.A</h6>
+                            <h6 className='text-midNight text-2xl font-semibold mb-5'>U.S.A</h6>
                             <div className='flex items-start gap-3 mb-4'>
                                 <div className='w-7 h-7 relative flex-shrink-0'>
                                     <Image src="/images/icons/location.svg" alt="location" fill className='object-contain' />
@@ -39,11 +39,11 @@ const OfficeAddress = () => {
                 <div className='container'>
                     <div className='flex flex-col'>
                         <div className='mb-7'>
-                            <h1 className={`text-[#1A1A1A] text-[48px] leading-[56px] font-bold font-[family-name:var(--font-Outfit)]`}>Regional Office</h1>
+                            <h1 className={`text-midNight text-[48px] leading-[56px] font-bold `}>Regional Office</h1>
                         </div>
                         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8'>
                             <div>
-                                <h6 className='text-[#1A1A1A] text-2xl font-semibold mb-5'>Pakistan</h6>
+                                <h6 className='text-midNight text-2xl font-semibold mb-5'>Pakistan</h6>
                                 <div className='flex items-start gap-3 mb-4'>
                                     <div className='w-7 h-7 relative flex-shrink-0'>
                                         <Image src="/images/icons/location.svg" alt="location" fill className='object-contain' />
@@ -58,7 +58,7 @@ const OfficeAddress = () => {
                                 </div>
                             </div>
                             <div>
-                                <h6 className='text-[#1A1A1A] text-2xl font-semibold mb-5'>Bangladesh</h6>
+                                <h6 className='text-midNight text-2xl font-semibold mb-5'>Bangladesh</h6>
                                 <div className='flex items-start gap-3 mb-4'>
                                     <div className='w-7 h-7 relative flex-shrink-0'>
                                         <Image src="/images/icons/location.svg" alt="location" fill className='object-contain' />
@@ -73,7 +73,7 @@ const OfficeAddress = () => {
                                 </div>
                             </div>
                             <div>
-                                <h6 className='text-[#1A1A1A] text-2xl font-semibold mb-5'>India</h6>
+                                <h6 className='text-midNight text-2xl font-semibold mb-5'>India</h6>
                                 <div className='flex items-start gap-3 mb-4'>
                                     <div className='w-7 h-7 relative flex-shrink-0'>
                                         <Image src="/images/icons/location.svg" alt="location" fill className='object-contain' />

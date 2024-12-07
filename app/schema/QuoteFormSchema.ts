@@ -37,52 +37,16 @@ export const QuoteFormSchema = z.object({
     .max(100, {
       message: "Email must be at most 100 characters.",
     }),
-  loading_place: z
-    .string()
-    .trim()
-    .min(2, {
-      message: "Loading place must be at least 2 characters.",
-    })
-    .max(100, {
-      message: "Loading place must be at most 100 characters.",
-    }),
-  unloading_place: z
-    .string()
-    .trim()
-    .min(2, {
-      message: "Unloading place must be at least 2 characters.",
-    })
-    .max(100, {
-      message: "Unloading place must be at most 100 characters.",
-    }),
-  payload: z
-    .string()
-    .trim()
-    .nonempty({
-      message: "Payload is required.",
-    })
-    .max(50, {
-      message: "Payload must be at most 50 characters.",
-    }),
-  dimensions: z
-    .string()
-    .trim()
-    .nonempty({
-      message: "Dimensions are required.",
-    })
-    .max(50, {
-      message: "Dimensions must be at most 50 characters.",
-    }),
   type_of_cargo: z.enum(
-    ["Container Cargo", "Liquid Bulk", "Dry Bulk", "Break Bulk", "Others"],
+    ["ABC", "ABC", "ABC", "ABC", "ABC"],
     {
-      message: "Please select a valid type of cargo.",
+      message: "Please select a service.",
     }
   ),
   type_of_transportation: z.enum(
-    ["Air Freight", "Sea Freight", "Road Freight"],
+    ["ABC", "ABC", "ABC"],
     {
-      message: "Please select a valid type of transportation.",
+      message: "Please select a industry.",
     }
   ),
   message: z

@@ -25,13 +25,15 @@ const config: Config = {
         md: "1.5rem",
         lg: "1.5rem",
         xl: "2rem",
-        xxl: "1.5rem",
+        xxl: "2rem",
       },
     },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: { "100": "#0074fc", "200": "#005dca" },
+        midNight: "#001e31",
       },
       borderRadius: {
         lg: "var(--radius)",

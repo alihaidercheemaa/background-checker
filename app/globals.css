@@ -15,7 +15,7 @@ input[type="number"] {
 }
 
 ::selection {
-  background-color: #010101;
+  background-color: #005dca;
   color: #fff;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #010101;
+  background: #005dca;
 }
 
 ::-webkit-scrollbar-track {
@@ -46,4 +46,16 @@ body {
   :root {
     --radius: 0.5rem;
   }
+}
+
+.navlinks {
+  @apply hover:text-primary-100 text-center font-light text-base capitalize p-1 tracking-wide transition-colors duration-300;
+}
+
+.resp-navlinks {
+  @apply w-full text-center text-midNight border-b py-3 tracking-wide capitalize transition-colors duration-300;
+}
+
+.footlinks {
+  @apply text-white font-normal text-base capitalize;
 }
