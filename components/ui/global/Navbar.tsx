@@ -15,7 +15,7 @@ export const navlinks = [
     { label: "industries", href: "#" },
     { label: "blogs", href: "#" },
     { label: "pricing", href: "#" },
-    { label: "contact", href: "#" },
+    { label: "contact", href: "/contact" },
 ]
 
 const Navbar = () => {

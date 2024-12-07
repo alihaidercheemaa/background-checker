@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${roboto.className} antialiased`}
       >
         <NextTopLoader color="#fff" showSpinner={false} />
-        <Toaster position="bottom-center" />
+        <Toaster position="bottom-right" />
         <Navbar />
         {children}
         <Footer />
