@@ -24,7 +24,7 @@ const fetchBlogs = async () => {
         );
         return response.data.payload;
     } catch (error) {
-        console.error("Error fetching blogs:", error);
+        console.error("Error fetching blogs:", error); 
         return null;
     }
 };
