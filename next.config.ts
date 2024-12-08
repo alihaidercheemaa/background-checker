@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "adminpanel.inmedsolution.com",
+  //       pathname: "/**",
+  //     },
+  //   ],
+  // },
+  images: {
+    domains: ['adminpanel.inmedsolution.com'],
+  },
 };
 
 export default nextConfig;

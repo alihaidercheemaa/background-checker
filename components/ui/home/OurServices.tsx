@@ -14,7 +14,7 @@ const OurServices = () => {
                     </div>
                 </div>
                 <div className='grid md:grid-cols-2 grid-cols-1 gap-8 max-w-[1100px] mx-auto'>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-2 w-[58px] h-[58px]'>
                             <Image src="/images/icons/contractLogistics.svg" alt="contractLogistics" fill />
                         </div>
@@ -23,7 +23,7 @@ const OurServices = () => {
                             <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Our contract logistics services provide end-to-end management of your supply chain, tailored to meet your business unique demands. Leveraging advanced warehouse management systems, predictive analytics, and automated solutions, we handle everything from inventory control and order fulfillment to distribution and returns. With our tech-driven approach, we streamline processes, reduce costs, and optimize your logistics operations to support scalable growth and improve overall efficiency.</p>
                         </div>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-2 w-[58px] h-[58px]'>
                             <Image src="/images/icons/oceanAndAirFreight.png" alt="oceanAndAirFreight" fill />
                         </div>
@@ -32,7 +32,7 @@ const OurServices = () => {
                             <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Our ocean and air freight solutions offer seamless global shipping, tailored to your specific needs. Using advanced route optimization and real-time tracking technology, we ensure efficient, timely, and cost-effective deliveries, whether by sea or air. From handling customs clearance to managing complex logistics requirements, our team combines industry expertise with digital tools to provide reliable, transparent freight solutions that keep your supply chain moving smoothly across borders.</p>
                         </div>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-2 w-[58px] h-[58px]'>
                             <Image src="/images/icons/warehousingAndStorage.svg" alt="warehousingAndStorage" fill />
                         </div>
@@ -41,7 +41,7 @@ const OurServices = () => {
                             <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Our extensive warehousing and storage facilities, covering 100,000 square feet in Karachi and 50,000 square feet each in Lahore and Islamabad, are designed to support your business logistics needs. Equipped with advanced inventory management systems and automated storage solutions, our facilities offer secure, efficient handling and storage of your goods. With real-time visibility and optimized space management, we provide reliable, scalable warehousing that adapts to your operational demands.</p>
                         </div>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-6 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-6 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-2 w-[58px] h-[58px]'>
                             <Image src="/images/icons/consultingServices.png" alt="consultingServices" fill />
                         </div>

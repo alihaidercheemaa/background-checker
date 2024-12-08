@@ -1,16 +1,16 @@
 export const dynamic = "force-dynamic";
-import BlogListing from "@/components/ui/blogs/BlogListing";
 import axios from "axios";
 import { Metadata } from "next";
 import Link from "next/link";
 import https from 'https';
-import HeroSection from "@/components/ui/blogs/HeroSection";
+import HeroSection from "@/components/ui/industries/HeroSection";
+import IndustriesListing from "@/components/ui/industries/IndustriesListing";
 
 export const metadata: Metadata = {
-    title: "Blogs | Stay Updated with the Latest from Background Checker",
+    title: "Industries | Stay Updated with the Latest from Background Checker",
     description:
         "Discover the latest news, insights, and updates from Background Checker. Read our blog to stay informed about technology trends and company innovations.",
-    metadataBase: new URL("http://localhost:3000/blogs"),
+    metadataBase: new URL("http://localhost:3000/services"),
 };
 
 const axiosInstance = axios.create({
@@ -20,24 +20,24 @@ const axiosInstance = axios.create({
 const fetchBlogs = async () => {
     try {
         const response = await axiosInstance.get(
-            `${process.env.NEXT_API_ENDPOINT}/api/blogs/list.php`
+            `${process.env.NEXT_API_ENDPOINT}/api/industries/list.php`
         );
         return response.data.payload;
     } catch (error) {
-        console.error("Error fetching blogs:", error);
+        console.error("Error fetching industries:", error);
         return null;
     }
 };
 
 const page = async () => {
-    const blogListing = await fetchBlogs();
+    const industriesListing = await fetchBlogs();
 
-    if (!blogListing || blogListing.length === 0) {
+    if (!industriesListing || industriesListing.length === 0) {
         return (
             <>
                 <section className="h-screen flex flex-col justify-center items-center gap-y-6">
                     <h1 className="text-midnight font-semibold lg:text-[22px] sm:text-2xl text-xl lg:leading-7">
-                        OOPS! No Blog Avaliable
+                        OOPS! No Industry Avaliable
                     </h1>
                     <p>
                         Go back to{" "}
@@ -55,8 +55,8 @@ const page = async () => {
 
     return (
         <>
-            <HeroSection />
-            <BlogListing blogListing={blogListing} next_api_endpoint={process.env.NEXT_API_ENDPOINT} />
+            <HeroSection/>
+            <IndustriesListing industriesListing={industriesListing} next_api_endpoint={process.env.NEXT_API_ENDPOINT} />
         </>
     );
 };

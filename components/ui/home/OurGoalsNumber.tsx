@@ -14,28 +14,28 @@ const OurGoalsNumber = () => {
                     </div>
                 </div>
                 <div className='grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8'>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-6 w-[58px] h-[42px]'>
                             <Image src="/images/icons/peoples.svg" alt="peoples" fill />
                         </div>
                         <h1 className='text-midNight text-6xl font-semibold  text-center mb-1'>20+</h1>
                         <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Hardworking People</p>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-6 w-[58px] h-[42px]'>
                             <Image src="/images/icons/countries.svg" alt="countries" fill />
                         </div>
                         <h1 className='text-midNight text-6xl font-semibold  text-center mb-1'>5+</h1>
                         <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Vendors</p>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-6 w-[58px] h-[42px]'>
                             <Image src="/images/icons/office.svg" alt="office" fill />
                         </div>
                         <h1 className='text-midNight text-6xl font-semibold  text-center mb-1'>8+</h1>
                         <p className='text-[#525252] text-[16px] leading-[26px] font-normal text-center'>Sectors</p>
                     </div>
-                    <div className='bg-[#ECEDF1] py-9 px-8 rounded-2xl'>
+                    <div className='bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg'>
                         <div className='relative mx-auto mb-6 w-[58px] h-[42px]'>
                             <Image src="/images/icons/happy.svg" alt="happy" fill />
                         </div>

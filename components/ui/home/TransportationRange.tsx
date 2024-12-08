@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const TransportationRange = () => {
     return (
-        <section id="about" className='w-full h-full bg-[#F8F9FB] lg:py-40 pt-20 lg:relative static'>
+        <section className='w-full h-full bg-[#F8F9FB] lg:py-40 pt-20 lg:relative static'>
             <div className='container flex lg:flex-row flex-col lg:justify-between lg:items-center justify-center items-start gap-10 lg:mb-72 mb-20'>
                 <div className='lg:w-1/2 w-full'>
                     <div className='max-w-[575px] mb-4'>

@@ -11,8 +11,8 @@ import { Button } from '../button'
 export const navlinks = [
     { label: "home", href: "/" },
     { label: "about", href: "#" },
-    { label: "services", href: "#" },
-    { label: "industries", href: "#" },
+    { label: "services", href: "/services" },
+    { label: "industries", href: "/industries" },
     { label: "blogs", href: "/blogs" },
     { label: "pricing", href: "#" },
     { label: "contact", href: "/contact" },
@@ -40,7 +40,6 @@ const Navbar = () => {
 
     return (
         <>
-
             <nav className={`${scroll ? 'bg-white shadow-lg' : 'bg-transparent'} ${isOpen && 'shadow-lg'} w-full fixed top-0 inset-x-0 z-30`}>
                 <div className='container py-4 flex lg:flex-row flex-col lg:justify-between lg:items-center'>
                     <div className={`justify-between flex items-center  lg:w-max w-full`}>

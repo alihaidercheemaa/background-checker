@@ -10,9 +10,13 @@ const Footer = () => {
                     <div className='flex lg:flex-row flex-col justify-between items-start lg:gap-20 gap-14'>
                         <div className='xl:max-w-[300px] lg:max-w-[215px] max-w-[300px]'>
                             <div className='md:mb-6 mb-4'>
-                                <Link href="/">
+                                {/* <Link href="/">
                                     <Image src="/images/logo.svg" alt="logo" width={170} height={170} priority />
-                                </Link>
+                                </Link> */}
+                                 <Link href="/">
+                            {/* <Image src="/images/logo.svg" alt="logo" width={170} height={170} priority /> */}
+                            <h1 className={`text-primary-100 text-[43px] leading-[53px] font-bold`}>Logo</h1>
+                        </Link>
                             </div>
                             <div className='md:mb-4 mb-3'>
                                 <h6 className='text-white text-base font-normal'>

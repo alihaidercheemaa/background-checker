@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 interface BlogListingTypes {
@@ -14,11 +14,11 @@ interface BlogListingTypes {
     status: string;
   }[];
 
-  api_endpoint: string | undefined
+  next_api_endpoint: string | undefined
 }
 
 
-const BlogListing: React.FC<BlogListingTypes> = ({ blogListing, api_endpoint }) => {
+const BlogListing: React.FC<BlogListingTypes> = ({ blogListing, next_api_endpoint }) => {
   const sortedBlogListing = [...blogListing].sort((a, b) => {
     return new Date(b.blog_date).getTime() - new Date(a.blog_date).getTime();
   });
@@ -28,22 +28,27 @@ const BlogListing: React.FC<BlogListingTypes> = ({ blogListing, api_endpoint }) 
         {sortedBlogListing.map(
           (item, index) =>
             item.status == "1" && (
-              <div key={index} className="bg-[#ECEDF1] py-9 px-8 rounded-2xl">
+              <div key={index} className="bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg">
                 <Link href={`/blogs/${item.slug}`} className="space-y-6">
-                  <div className="h-[250px] relative w-full rounded-2xl overflow-hidden">
-                    <Image
-                      src={`${api_endpoint}/assets/uploads/${item.blog_image}`}
+                  <div className="h-[250px] relative w-full lg:rounded-2xl md:rounded-xl rounded-lg overflow-hidden">
+                    {/* <Image
+                      src={`${next_api_endpoint}/assets/uploads/${item.blog_image}`}
                       className="object-cover w-full h-full"
                       alt={item.blog_image}
                       quality={100}
                       fill
+                    /> */}
+                    <img
+                      src={`${next_api_endpoint}/assets/uploads/${item.blog_image}`}
+                      className="object-cover w-full h-full"
+                      alt={item.blog_image}
                     />
                   </div>
                   <div>
-                    <h1 className="font-bold text-2xl text-midNight text-start line-clamp-3 mb-6">
+                    <h1 className="font-bold text-2xl text-midNight text-start line-clamp-3 mb-3">
                       {item.title}
                     </h1>
-                    <p className="text-[#525252] font-normal text-[16px] leading-[25px] text-start break-words mb-6 line-clamp-4">
+                    <p className="text-[#525252] font-normal text-[16px] leading-[25px] text-start break-words mb-3 line-clamp-4">
                       {item.short_description}
                     </p>
                     <p className="text-[#525252] font-normal text-[13px] leading-[16px] text-start">

@@ -23,21 +23,21 @@ const links: LinksType[] = [
         id: 2,
         label: "email",
         subLabel: "info@background.checker",
-        img: <Mail size={36}  />,
+        img: <Mail size={36} />,
         copy: true,
     },
     {
         id: 3,
         label: "phone",
         subLabel: "+1 1234567891",
-        img: <Phone size={36}  />,
+        img: <Phone size={36} />,
         copy: true,
     },
     {
         id: 4,
         label: "mobile",
         subLabel: "+1 1234567891",
-        img: <Smartphone size={36}  />,
+        img: <Smartphone size={36} />,
         copy: true,
     },
 ];
@@ -62,7 +62,7 @@ const ContactCards = () => {
                 {links.map((item, index) => (
                     <div
                         key={index}
-                        className="bg-[#ECEDF1] py-9 px-8 rounded-2xl"
+                        className="bg-[#ECEDF1] py-9 px-8 lg:rounded-2xl md:rounded-xl rounded-lg"
                     >
                         <div className="flex justify-start items-center">
                             {item.img}
