@@ -33,8 +33,8 @@ async function fetchBlogs(service_id: string) {
     }
 }
 
-const page = async ({ params }: { params: { service_id: string } }) => {
-    const { service_id } = await params
+const page = async ({ params }: { params: Promise<{ service_id: string }> }) => {
+    const service_id = (await params).service_id
     const servicesDetails = await fetchBlogs(service_id);
     return (
         <>

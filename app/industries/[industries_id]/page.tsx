@@ -33,8 +33,8 @@ async function fetchBlogs(industries_id: string) {
     }
 }
 
-const page = async ({ params }: { params: { industries_id: string } }) => {
-    const { industries_id } = await params
+const page = async ({ params }: { params: Promise<{ industries_id: string }> }) => {
+    const industries_id = (await params).industries_id
     const industriesDetails = await fetchBlogs(industries_id);
     return (
         <>
