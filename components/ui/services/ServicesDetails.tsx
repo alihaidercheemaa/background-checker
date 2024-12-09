@@ -5,7 +5,6 @@ import Link from "next/link";
 export interface ServicesDetailsTypes {
   servicesDetails: {
     id: string;
-    slug: string
     slug: string;
     title: string;
     description: string;
