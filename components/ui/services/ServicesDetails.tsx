@@ -16,7 +16,7 @@ export interface ServicesDetailsTypes {
 }
 
 const ServicesDetails: React.FC<ServicesDetailsTypes> = ({ servicesDetails, next_api_endpoint }) => {
-  if (!servicesDetails) {
+  if (!servicesDetails || servicesDetails.length === 0) {
     return (
       <section className="h-screen flex flex-col justify-center items-center gap-y-6">
         <h1 className="text-midnight font-semibold lg:text-[22px] sm:text-2xl text-xl lg:leading-7">

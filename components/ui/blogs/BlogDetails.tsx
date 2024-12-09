@@ -1,6 +1,5 @@
 "use client";
 // import Image from "next/image";
-import Link from "next/link";
 import {
   FacebookMessengerIcon,
   FacebookShareButton,
@@ -26,24 +25,7 @@ export interface BlogDetailsTypes {
 }
 
 const BlogDetails: React.FC<BlogDetailsTypes> = ({ blogDetails, next_api_endpoint }) => {
-  if (!blogDetails) {
-    return (
-      <section className="h-screen flex flex-col justify-center items-center gap-y-6">
-        <h1 className="text-midnight font-semibold lg:text-[22px] sm:text-2xl text-xl lg:leading-7">
-          OOPS! No Blog Avaliable
-        </h1>
-        <p>
-          Go back to{" "}
-          <Link
-            href="/"
-            className="text-azure-100 underline underline-offset-2"
-          >
-            Home
-          </Link>
-        </p>
-      </section>
-    );
-  }
+
   return (
     <>
       <section className={`container py-20`}>

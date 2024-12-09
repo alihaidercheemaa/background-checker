@@ -55,7 +55,7 @@ const page = async () => {
 
     return (
         <>
-            <HeroSection/>
+            <HeroSection />
             <ServicesListing servicesListing={servicesListing} next_api_endpoint={process.env.NEXT_API_ENDPOINT} />
         </>
     );
