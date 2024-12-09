@@ -58,7 +58,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     }
     return (
         <>
-            <GenericHeroSection title="Blog Details" description="Contact us today to discover how our customized background check solutions enhance your hiring process and ensure a safer workplace." />
+            <GenericHeroSection title="Blog Details" />
             <BlogDetails blogDetails={blogDetails} next_api_endpoint={process.env.NEXT_API_ENDPOINT} />
         </>
     );
