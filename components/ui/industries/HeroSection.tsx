@@ -16,7 +16,7 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <div className='lg:w-1/2 w-full'>
-                        <Image src="/images/heroSectionMailGlob.svg" alt="heroSectionMailGlob" className='ml-auto' width={400} height={400} />
+                        <Image src="/images/industries.svg" alt="industries" className='ml-auto' width={400} height={400} />
                     </div>
                 </div>
             </section>
