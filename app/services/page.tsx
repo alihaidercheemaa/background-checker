@@ -4,7 +4,7 @@ import axios from "axios";
 import { Metadata } from "next";
 import Link from "next/link";
 import https from 'https';
-import HeroSection from "@/components/ui/services/HeroSection";
+import HeroSectionTwo from "@/components/ui/global/HeroSectionTwo";
 
 export const metadata: Metadata = {
     title: "Services | Stay Updated with the Latest from Background Checker",
@@ -55,7 +55,7 @@ const page = async () => {
 
     return (
         <>
-            <HeroSection />
+            <HeroSectionTwo title="Services" description="Contact us today to discover how our customized background check solutions enhance your hiring process and ensure a safer workplace." heroImg="servicesImg.svg" heroBg="contactBG.jpg" />
             <ServicesListing servicesListing={servicesListing} next_api_endpoint={process.env.NEXT_API_ENDPOINT} />
         </>
     );

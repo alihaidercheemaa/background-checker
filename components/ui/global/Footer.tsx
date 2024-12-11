@@ -13,14 +13,13 @@ const Footer = () => {
                                 {/* <Link href="/">
                                     <Image src="/images/logo.svg" alt="logo" width={170} height={170} priority />
                                 </Link> */}
-                                 <Link href="/">
-                            {/* <Image src="/images/logo.svg" alt="logo" width={170} height={170} priority /> */}
-                            <h1 className={`text-primary-100 text-[43px] leading-[53px] font-bold`}>Logo</h1>
-                        </Link>
+                                <Link href="/">
+                                    <h1 className={`text-primary-100 text-[43px] leading-[53px] font-bold`}>Logo</h1>
+                                </Link>
                             </div>
                             <div className='md:mb-4 mb-3'>
                                 <h6 className='text-white text-base font-normal'>
-                                We provide comprehensive criminal background screening services for safety, compliance, and security, offering fast turnaround and reliable insights for informed decision-making.
+                                    We provide comprehensive criminal background screening services for safety, compliance, and security, offering fast turnaround and reliable insights for informed decision-making.
                                 </h6>
                             </div>
                             <div className='flex flex-row md:gap-4 gap-3'>
@@ -50,10 +49,10 @@ const Footer = () => {
                                 </div>
                                 <div className='flex flex-col md:gap-4 gap-3'>
                                     <Link href="/" className='footlinks'>Home</Link>
-                                    <Link href="#" className='footlinks'>Services</Link>
-                                    <Link href="#" className='footlinks'>Industries</Link>
+                                    <Link href="/services" className='footlinks'>Services</Link>
+                                    <Link href="/industries" className='footlinks'>Industries</Link>
                                     <Link href="#" className='footlinks'>Pricing</Link>
-                                    <Link href="#" className='footlinks'>Contact</Link>
+                                    <Link href="/contact" className='footlinks'>Contact</Link>
                                 </div>
                             </div>
                             <div className='max-w-[300px]'>
@@ -76,7 +75,7 @@ const Footer = () => {
                                 </div>
                                 <div className='md:mb-6 mb-4'>
                                     <p className='footlinks !normal-case'>
-                                    Join our newsletter community to receive regular updates on the topics that interest you and your business.
+                                        Join our newsletter community to receive regular updates on the topics that interest you and your business.
                                     </p>
                                 </div>
                                 <div className='flex flex-row justify-between items-center gap-3 border-b border-[#fff] pb-[6px]'>

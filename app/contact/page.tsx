@@ -1,6 +1,6 @@
 import ContactCards from '@/components/ui/contact/ContactCards'
 import GoogleMap from '@/components/ui/contact/GoogleMap'
-import HeroSection from '@/components/ui/contact/HeroSection'
+import HeroSectionTwo from '@/components/ui/global/HeroSectionTwo'
 import QuoteForm from '@/components/ui/home/QuoteForm'
 import { Metadata } from 'next'
 import React from 'react'
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const page = () => {
     return (
         <>
-            <HeroSection />
+            <HeroSectionTwo title="Contact" description="Contact us today to discover how our customized background check solutions enhance your hiring process and ensure a safer workplace." heroImg="contactImg.svg" heroBg="contactBG.jpg" />
             <ContactCards />
             <GoogleMap />
             <QuoteForm />

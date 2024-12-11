@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import Hamburger from './Hamburger'
 import NavbarResponsive from './NavbarResponsive'
 import { motion, AnimatePresence } from "framer-motion";
-// import Image from 'next/image'
 import { Button } from '../button'
 
 export const navlinks = [
