@@ -1,4 +1,4 @@
-name: Deploy Next.js Project
+name: Build and Deploy Frontend
 
 on:
   push:
@@ -6,21 +6,39 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
+    name: Build and Deploy Frontend
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up SSH key
-      run: |
-        ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Deploy frontend with rsync
-      run: |
-        rsync -az -e "ssh -i ~/.ssh/id_ed25519" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Reload application with pm2
-      run: |
-        ssh -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
+      - name: Build Frontend
+        run: npm run build
+
+      - name: Set up SSH key
+        run: |
+          # Ensure known_hosts file exists and has correct permissions
+          ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
+          
+          # Add SSH private key to the keychain using ssh-agent
+          echo "$SERVER_KEY" | ssh-add - <<< ""
+
+      - name: Deploy frontend with rsync
+        run: |
+          # Deploy the .next folder to the server
+          rsync -az -e "ssh -i ~/.ssh/id_ed25519" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
+
+      - name: Reload application with pm2
+        run: |
+          # Reload the application using pm2 on the server
+          ssh -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
