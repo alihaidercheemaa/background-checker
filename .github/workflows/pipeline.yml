@@ -31,5 +31,5 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_KEY: ${{ secrets.SERVER_KEY }}
         run: |
-          rsync -az -e "ssh -i $SERVER_KEY" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
+          rsync -az -e "ssh -i <(echo '${{ secrets.SERVER_KEY }}')" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
           ssh -i "$SERVER_KEY" $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
