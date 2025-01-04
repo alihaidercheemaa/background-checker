@@ -25,18 +25,11 @@ jobs:
       - name: Build Frontend
         run: npm run build
 
-      - name: Add Host to Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
-
       - name: Copy Build to Server
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_KEY: ${{ secrets.SERVER_KEY }}
         run: |
-          echo "${{ secrets.SERVER_KEY }}" > private_key.pem
-          chmod 600 private_key.pem
-          rsync -az -e "ssh -i private_key.pem" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
+          rsync -az -e "ssh -i $SERVER_KEY" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
           ssh -i "$SERVER_KEY" $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
