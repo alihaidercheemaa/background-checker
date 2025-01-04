@@ -1,0 +1,35 @@
+name: Frontend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Frontend
+        run: npm run build
+
+      - name: Copy Build to Server
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_KEY: ${{ secrets.SERVER_KEY }}
+        run: |
+          rsync -az -e "ssh -i $SERVER_KEY" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
+          ssh -i "$SERVER_KEY" $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
