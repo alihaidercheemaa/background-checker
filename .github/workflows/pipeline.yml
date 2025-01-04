@@ -29,9 +29,6 @@ jobs:
         run: |
           # Ensure known_hosts file exists and has correct permissions
           ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
-          
-          # Add SSH private key to the keychain using ssh-agent
-          echo "$SERVER_KEY" | ssh-add - <<< ""
 
       - name: Deploy frontend with rsync
         run: |
