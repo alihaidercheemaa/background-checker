@@ -25,6 +25,11 @@ jobs:
       - name: Build Frontend
         run: npm run build
 
+      - name: Add Host to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
+
       - name: Copy Build to Server
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
