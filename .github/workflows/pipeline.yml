@@ -1,43 +1,37 @@
-name: Build and Deploy Frontend
+name: Build and Deploy Background Checker on server 
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy Frontend
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
 
-      - name: Install Dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm ci
 
-      - name: Build Frontend
-        run: npm run build
+    - name: Build Next.js app
+      run: npm run build
 
-      - name: Set up SSH key
-        run: |
-          mkdir -p ~/.ssh
-          # Ensure known_hosts file exists and has correct permissions
-          ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-
-      - name: Deploy frontend with rsync
-        run: |
-          # Deploy the .next folder to the server
-          rsync -az -e "ssh -i ~/.ssh/id_ed25519" .next $SERVER_USER@$SERVER_HOST:/root/coding/projects/backgroundchecker/frontend/.next
-
-      - name: Reload application with pm2
-        run: |
-          # Reload the application using pm2 on the server
-          ssh -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "sudo pm2 reload all"
+    - name: Deploy to Server and Restart PM2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        script: |
+          cd ${{ secrets.PROJECT_PATH }}
+          git pull origin main
+          npm ci
+          npm run build
+          pm2 restart backgroundchecker-frontend
